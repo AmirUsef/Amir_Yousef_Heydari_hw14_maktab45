@@ -20,12 +20,11 @@ $(document).ready(function() {
             let user = { username: username, password: password }
             $.ajax({
                 type: "POST",
-                url: "http://localhost:3000/authentication",
+                url: "http://localhost:3000/login/authentication",
                 data: user,
                 async: false,
-                success: function() {
+                success: function(result) {
                     alert("ورود موفقیت آمیز");
-                    window.location.href = 'http://localhost:3000/profile'
                 },
                 error: function() {
                     alert("کاریر یافت نشد");
