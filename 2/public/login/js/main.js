@@ -25,6 +25,7 @@ $(document).ready(function() {
                 async: false,
                 success: function(result) {
                     alert("ورود موفقیت آمیز");
+                    window.location.href = `http://localhost:3000/profile/${result.uuid}`
                 },
                 error: function() {
                     alert("کاریر یافت نشد");

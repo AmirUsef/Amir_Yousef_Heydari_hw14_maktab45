@@ -1,13 +1,14 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/product:productID', (req, res) => {
-    const cards = require('../public/cards')
-    const card = cards.find(item => item.id == req.params.productID)
-    if (card != undefined)
-        res.render('product.ejs', card)
+
+router.get('/:id', (req, res) => {
+    let users = require('../public/users')
+    let user = users.find(item => item.id == req.params.id)
+    if (!user)
+        res.status(404).send()
     else
-        res.send('404 page not found')
+        res.status(200).render('profile.ejs', user)
 });
 
 module.exports = router;

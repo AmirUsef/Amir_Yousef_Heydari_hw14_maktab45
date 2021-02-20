@@ -286,6 +286,10 @@ button:active i {
     }
 }
 
+#form p {
+    text-align: center;
+}
+
 .error {
     font-size: small;
     color: red;
